@@ -25,6 +25,7 @@ except FileNotFoundError:
 for add_date, chk  in zip(cur_date, wk_chk):
     if chk == 1:
         
+        
 
     print(add_date, chk)
 
