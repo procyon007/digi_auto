@@ -1,6 +1,7 @@
 import os
 import csv
 import dateutils
+import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
@@ -41,9 +42,7 @@ haken_digi = Select(driver.find_element_by_name("Cr"))
 haken_digi.select_by_index(1)
 WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
 
-driver.switch_to.frame("main")
-
-for add_date, chk  in zip(cur_date, wk_chk):
-    if chk == 1:
-        
-        driver.find_element_by_name("")
+driver.switch_to.default_content()
+driver.switch_to.frame("main") 
+time.sleep(5)
+driver.find_element_by_xpath("//a[contains(text(), '1')]").click()

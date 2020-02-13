@@ -15,19 +15,17 @@ try:
     for digi_date in csv_data:
         cur_date.append(digi_date[8])
         wk_chk.append(digi_date[9])
-        start_time.append(digi_date[15])
-        stop_time.append(digi_date[17])
-#            print(digi_date[8] + ":" + str(digi_date[9]))
+        start_time.append(digi_date[14])
+        stop_time.append(digi_date[16])
+    print(start_time)
 
 except FileNotFoundError:
     print("指定された、CSVファイルが見つかりません")
 
 for add_date, chk  in zip(cur_date, wk_chk):
-    if chk == 1:
-        
-        
-
-    print(add_date, chk)
+    for st_tm, sp_tm in zip(start_time, stop_time):
+        if chk == 1:
+            print(add_date + ":" + chk + "/" + st_tm + ":" + sp_tm)
 
 csv_tmp.close
 
