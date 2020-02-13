@@ -45,4 +45,25 @@ WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
 driver.switch_to.default_content()
 driver.switch_to.frame("main") 
 time.sleep(5)
-driver.find_element_by_xpath("//a[contains(text(), '1')]").click()
+
+driver.find_element_by_xpath("//a[contains(text(), '3')]").click()
+WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
+
+hst_time = Select(driver.find_element_by_name("HourStart"))
+hst_time.select_by_index(10)
+WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
+
+mst_time = Select(driver.find_element_by_name("MinuteStart"))
+mst_time.select_by_index(0)
+WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
+
+he_time = Select(driver.find_element_by_name("HourEnd"))
+he_time.select_by_index(18)
+WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
+
+me_time = Select(driver.find_element_by_name("MinuteEnd"))
+me_time.select_by_index(6)
+WebDriverWait(driver, 60).until(Ec.presence_of_all_elements_located)
+
+
+driver.find_element_by_name("RegistButton").click()
